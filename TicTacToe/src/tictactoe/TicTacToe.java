@@ -69,7 +69,52 @@ public class TicTacToe extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for(int i=0;i<9;i++) {
+			if(e.getSource()==buttom[i]) {
+				if(player1_turn) {
+					if(buttom[i].getText()=="") {
+						buttom[i].setForeground(new Color(255,0,0));
+						buttom[i].setText("X");
+						player1_turn=false;
+						textfield.setText("O turn");
+						check();
+					}
+				}
+				else {
+					if(buttom[i].getText()=="") {
+						buttom[i].setForeground(new Color(0,0,255));
+						buttom[i].setText("O");
+						player1_turn=true;
+						textfield.setText("X turn");
+						check();
+					}
+				}
+			}			
+		}
+			
+	}
+	
+	
+	public void firstTurn() 
+	{
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e)
+		{
+			
+			e.printStackTrace();
+		}
+		if(random.nextInt(2)==0) {
+			player1_turn=true;
+			textfield.setText("X Turn");
+			}
+		else {
+			player1_turn=true;
+			textfield.setText("O Turn");
+		}
+	}
+        
+        
     }
 
-}
+
