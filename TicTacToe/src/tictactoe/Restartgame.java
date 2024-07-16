@@ -11,14 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Winner implements ActionListener
+
+
+public class Restartgame implements ActionListener
 {
 	
 	JFrame frame =new JFrame();
-	JButton buttonStartGame = new JButton("NEXT");
+	JButton ReStartGame = new JButton("RESTART");
 	JPanel title_panel =new JPanel();
 	JLabel textfield =new JLabel();
-	Winner()
+	
+	Restartgame()
 	{
 		
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,41 +30,28 @@ public class Winner implements ActionListener
 	frame.setLayout(new BorderLayout());
 	frame.setVisible(true);
 	
-	
+	frame.add(ReStartGame);
 	frame.add(title_panel);
 	frame.add(textfield);
-	textfield.add(buttonStartGame);
 	
-	buttonStartGame.setBounds(350,450,100,70);
-	buttonStartGame.addActionListener(this);
-	buttonStartGame.setFocusable(false);
-	buttonStartGame.setBackground(Color.GREEN);
+	ReStartGame.setBounds(350,450,100,70);
+	ReStartGame.addActionListener(this);
+	ReStartGame.setFocusable(false);
+	ReStartGame.setBackground(Color.GREEN);
 	
 	
 	title_panel.setLayout(new BorderLayout());
 	title_panel.setBounds(0,0,8000,100);
-	title_panel.setBackground(Color.BLUE);
+	title_panel.setBackground(Color.RED);
 	
 	
 	
 	textfield.setBackground(Color.CYAN);
 	textfield.setForeground(Color.black);
-	textfield.setFont(new Font("Ink Free",Font.BOLD,40));
+	textfield.setFont(new Font("Ink Free",Font.BOLD,65));
 	textfield.setHorizontalAlignment(JLabel.CENTER);
-	textfield.setText(" Our program doesnot show winner sorry! ");
+	textfield.setText("Do you wana play again Tic tac toe");
 	textfield.setOpaque(true);
 	
 	}
-	
-	public static void main(String[] args) 
-	{
-		Winner winner = new Winner();
-		
-	}
-        @Override
-	public void actionPerformed(ActionEvent e)
-	{
-		Restartgame tictactoe = new Restartgame();
-		frame.dispose();
-		}
 }
