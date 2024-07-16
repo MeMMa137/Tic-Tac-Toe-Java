@@ -234,6 +234,37 @@ public class TicTacToe extends JPanel implements ActionListener {
 		
 	}
         
+        public void xWins(int a, int b, int c) 
+	{
+		buttom[a].setBackground(Color.orange);
+		buttom[b].setBackground(Color.orange);
+		buttom[c].setBackground(Color.orange);
+		for(int i=0;i<9;i++) {
+			buttom[i].setEnabled(false);
+		}
+	
+		//Restartgame tictactoe = new Restartgame();
+		textfield.setText("X Win");
+		Winner winner = new Winner();
+		frame.dispose();
+	}
+	public void OWins(int a, int b, int c) 
+	{
+		buttom[a].setBackground(Color.ORANGE);
+		buttom[b].setBackground(Color.ORANGE);
+		buttom[c].setBackground(Color.ORANGE);
+		for(int i=0;i<9;i++) {
+			buttom[i].setEnabled(false);
+		}
+		
+		//Restartgame tictactoe = new Restartgame();
+		textfield.setText("O Win");
+		Winner winner = new Winner();
+	
+     frame.dispose();
+		
+	}
+        
     }
 
 
